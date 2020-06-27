@@ -1,0 +1,164 @@
+
+<ItemMDTextField@MDTextField>:
+    required: True
+    helper_text_mode: "on_error"
+    helper_text: "Введите число"
+
+<Tab>:
+    MDLabel:
+        id: label
+#        text: "Tab 0"
+        halign: "center"
+        valign: 'middle'
+
+<Container>:
+    rows: 1
+
+    lumber_in_cubic_meters: lumber_in_cubic_meters
+    value_in_rubles: value_in_rubles
+    number_second: number_second
+    value_in_rubles_second: value_in_rubles_second
+    text_field_height: text_field_height
+    text_field_width: text_field_width
+    text_field_length: text_field_length
+    text_field_number: text_field_number
+    text_field_price: text_field_price
+    text_field_height_2: text_field_height_2
+    text_field_width_2: text_field_width_2
+    text_field_length_2: text_field_length_2
+    number_cubic_meters: number_cubic_meters
+    text_field_price_2: text_field_price_2
+
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'Анютина лесопилка'
+
+        MDTabs:
+            id: android_tabs
+            on_tab_switch: app.on_tab_switch(*args)
+            Tab:
+                text: 'Считаем кубы и\nстоимость'
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    ItemMDTextField:
+                        id: text_field_height
+                        hint_text: "Введите высоту в мм"
+
+                    ItemMDTextField:
+                        id: text_field_width
+                        hint_text: "Введите ширину в мм"
+
+                    ItemMDTextField:
+                        id: text_field_length
+                        hint_text: "Введите длину в м"
+
+                    ItemMDTextField:
+                        id: text_field_number
+                        hint_text: "Введите количество в штуках"
+
+                    ItemMDTextField:
+                        id: text_field_price
+                        hint_text: "Введите цену за кубический метр в рублях"
+
+                    MDGridLayout:
+                        cols: 2
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            padding: [10,0,10,0]
+
+                            MDLabel:
+                                text: 'Количество в кубических метрах'
+
+                            MDLabel:
+                                text: 'Стоимость в рублях'
+
+                        MDBoxLayout:
+                            padding: [10,0,10,0]
+                            orientation: 'vertical'
+                            MDLabel:
+                                id: lumber_in_cubic_meters
+                                text: '0'
+                                halign: 'center'
+                                valign: 'middle'
+
+                            MDLabel:
+                                id: value_in_rubles
+                                text: '0'
+                                halign: 'center'
+                                valign: 'middle'
+
+                MDBoxLayout:
+                    MDFillRoundFlatButton:
+                        md_bg_color: 0, .85, 0, .7
+                        size_hint: 1, None
+                        text: 'Рассчитать'
+
+                        on_release:
+                            root.calculate()
+
+            Tab:
+                text: 'Считаем количество и\nстоимость'
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    ItemMDTextField:
+                        id: text_field_height_2
+                        hint_text: "Введите высоту в мм"
+
+                    ItemMDTextField:
+                        id: text_field_width_2
+                        hint_text: "Введите ширину в мм"
+
+                    ItemMDTextField:
+                        id: text_field_length_2
+                        hint_text: "Введите длину в м"
+
+                    ItemMDTextField:
+                        id: number_cubic_meters
+                        hint_text: "Введите количество в кубических метрах"
+
+                    ItemMDTextField:
+                        id: text_field_price_2
+                        hint_text: "Введите цену за кубический метр в рублях"
+
+                    MDGridLayout:
+                        cols: 2
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            padding: [10,0,10,0]
+
+                            MDLabel:
+                                text: 'Количество в штуках'
+
+                            MDLabel:
+                                text: 'Стоимость в рублях'
+
+                        MDBoxLayout:
+                            padding: [10,0,10,0]
+                            orientation: 'vertical'
+                            MDLabel:
+                                id: number_second
+                                text: '0'
+                                halign: 'center'
+                                valign: 'middle'
+
+                            MDLabel:
+                                id: value_in_rubles_second
+                                text: '0'
+                                halign: 'center'
+                                valign: 'middle'
+
+                MDBoxLayout:
+                    MDFillRoundFlatButton:
+                        md_bg_color: 0, .85, 0, .7
+                        size_hint: 1, None
+                        text: 'Рассчитать'
+
+                        on_release:
+                            root.calculate_2()
