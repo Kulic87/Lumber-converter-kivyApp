@@ -3,11 +3,11 @@
     required: True
     helper_text_mode: "on_error"
     helper_text: "Введите число"
+    input_filter: 'float'
 
 <Tab>:
     MDLabel:
         id: label
-#        text: "Tab 0"
         halign: "center"
         valign: 'middle'
 
@@ -31,8 +31,9 @@
 
     BoxLayout:
         orientation: 'vertical'
+        rows: 1
         MDToolbar:
-            title: 'Анютина лесопилка'
+            title: 'Назарову А. от Куликова'
 
         MDTabs:
             id: android_tabs
@@ -64,11 +65,14 @@
                         hint_text: "Введите цену за кубический метр в рублях"
 
                     MDGridLayout:
+                        rows: 2
                         cols: 2
+                        padding: [10,0,10,0]
+                        spacing: 110
+                        size_hint_x: .85
 
-                        MDBoxLayout:
+                        BoxLayout:
                             orientation: 'vertical'
-                            padding: [10,0,10,0]
 
                             MDLabel:
                                 text: 'Количество в кубических метрах'
@@ -76,9 +80,9 @@
                             MDLabel:
                                 text: 'Стоимость в рублях'
 
-                        MDBoxLayout:
-                            padding: [10,0,10,0]
+                        BoxLayout:
                             orientation: 'vertical'
+
                             MDLabel:
                                 id: lumber_in_cubic_meters
                                 text: '0'
@@ -92,9 +96,10 @@
                                 valign: 'middle'
 
                 MDBoxLayout:
+                    padding: [20,10,20,10]
                     MDFillRoundFlatButton:
                         md_bg_color: 0, .85, 0, .7
-                        size_hint: 1, None
+                        size_hint: 1, .15
                         text: 'Рассчитать'
 
                         on_release:
@@ -127,9 +132,13 @@
                         hint_text: "Введите цену за кубический метр в рублях"
 
                     MDGridLayout:
+                        rows: 2
                         cols: 2
+                        padding: [10,0,10,0]
+                        spacing: 110
+                        size_hint_x: .85
 
-                        MDBoxLayout:
+                        BoxLayout:
                             orientation: 'vertical'
                             padding: [10,0,10,0]
 
@@ -139,7 +148,7 @@
                             MDLabel:
                                 text: 'Стоимость в рублях'
 
-                        MDBoxLayout:
+                        BoxLayout:
                             padding: [10,0,10,0]
                             orientation: 'vertical'
                             MDLabel:
@@ -155,9 +164,10 @@
                                 valign: 'middle'
 
                 MDBoxLayout:
+                    padding: [20,10,20,10]
                     MDFillRoundFlatButton:
                         md_bg_color: 0, .85, 0, .7
-                        size_hint: 1, None
+                        size_hint: 1, .15
                         text: 'Рассчитать'
 
                         on_release:

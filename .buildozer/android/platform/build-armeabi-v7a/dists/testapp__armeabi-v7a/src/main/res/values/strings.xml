@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Test</string>
-    <string name="private_version">1593275820.3501744</string>
+    <string name="private_version">1593713562.1504738</string>
     <string name="presplash_color">#000000</string>
     <string name="urlScheme">kivy</string>
 </resources>
