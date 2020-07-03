@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Test
+title = Prezent
 
 # (str) Package name
 package.name = testapp
@@ -43,10 +43,10 @@ requirements = python3,kivy
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = %(source.dir)s/Image/NazarLoading.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = %(source.dir)s/Image/logo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
